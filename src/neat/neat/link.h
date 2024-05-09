@@ -1,5 +1,4 @@
-#ifndef LINK_H
-#define LINK_H
+#pragma once
 
 class LinkId {
 public:
@@ -17,5 +16,3 @@ public:
 
   LinkGene(LinkId id, double w, bool enabled) : link_id(id), weight(w), is_enabled(enabled) {}
 };
-
-#endif // LINK_H

@@ -24,6 +24,6 @@ private:
     void update_best();  // Assumes definition is available or to be implemented
 };
 
-#include "../src/population.tpp"  // For template implementation
+#include "../population.tpp"  // For template implementation
 
 #endif // POPULATION_H

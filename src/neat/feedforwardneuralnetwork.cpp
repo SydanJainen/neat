@@ -1,4 +1,4 @@
-#include "../include/feedforwardneuralnetwork.h"
+#include "neat/feedforwardneuralnetwork.h"
 #include <cmath>  // For activation functions, if necessary
 #include <vector>
 #include <unordered_set>

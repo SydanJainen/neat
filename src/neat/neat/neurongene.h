@@ -1,5 +1,4 @@
-#ifndef NEURONGENE_H
-#define NEURONGENE_H
+#pragma once
 
 enum class NeuronType {
     Input,
@@ -18,5 +17,3 @@ public:
 
   NeuronGene(int id, double b, Activation a, NeuronType neuronType = NeuronType::Input) : neuron_id(id), bias(b), activation(a), type(neuronType) {}
 };
-
-#endif // NEURONGENE_H

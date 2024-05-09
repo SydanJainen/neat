@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector>
 #include <functional>
 #include <optional>
@@ -5,6 +7,7 @@
 #include <stack>
 #include <random>
 #include <variant>
+#include "rng.h"
 
 static int m_genome_indexer = 0;
 
@@ -19,19 +22,13 @@ public:
         replace_rate(replace_rate) {}
 
   double new_value() const {
-    // Check if rng is defined before using it
-    if (!rng) {
-      throw std::runtime_error("Random number generator (rng) is not defined");
-    }
-    return clamp(rng->next_gaussian(init_mean, init_stdev));
+    Rng rng;
+    return clamp(rng.next_gaussian(init_mean, init_stdev));
   }
 
   double mutate_delta(double value) const {
-    // Check if rng is defined before using it
-    if (!rng) {
-      throw std::runtime_error("Random number generator (rng) is not defined");
-    }
-    double delta = clamp(rng->next_gaussian(0.0, mutation_power));
+    Rng rng;
+    double delta = clamp(rng.next_gaussian(0.0, mutation_power));
     return clamp(value + delta);
   }
 

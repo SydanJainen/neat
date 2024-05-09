@@ -21,6 +21,11 @@ public:
         return dist(rng_engine);
     }
 
+    double next_gaussian(double mean, double stdev) {
+        std::normal_distribution<double> dist(mean, stdev);
+        return dist(rng_engine);
+    }
+
     template<typename Iterator>
     Iterator choose_randomly(Iterator start, Iterator end) {
         std::uniform_int_distribution<> dist(0, std::distance(start, end) - 1);

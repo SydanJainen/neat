@@ -1,5 +1,4 @@
-#ifndef ACTIVATION_H
-#define ACTIVATION_H
+#pragma once
 
 #include <functional>
 #include <optional>
@@ -16,4 +15,3 @@ public:
 extern std::function<double(double)> sigmoid;
 extern std::function<double(double)> relu;
 
-#endif // ACTIVATION_H

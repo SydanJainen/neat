@@ -7,6 +7,7 @@ message( STATUS "Architecture: ${CMAKE_SYSTEM_PROCESSOR}" )
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
+set(NEATLIB_HEADERS_DIR ${PROJECT_SOURCE_DIR}/src/neat)
 
 set(CMAKE_BUILD_TYPE Debug)
 
@@ -17,5 +18,7 @@ endif (WIN32)
 if (UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O2")
 endif (UNIX)
+
+include_directories(${NEATLIB_HEADERS_DIR})
 
 add_subdirectory(src)

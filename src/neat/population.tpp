@@ -5,5 +5,5 @@ Individual Population::run(FitnessFn<FitnessT> compute_fitness, int num_generati
         update_best();
         individuals = reproduce();
     }
-    return individuals.front();  // Assuming best individual is wanted, or define how to determine it
+    return individuals.front();
 }

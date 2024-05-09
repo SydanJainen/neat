@@ -1,5 +1,5 @@
-#include "../include/neuronmutator.h"
-#include "../include/activation.h"
+#include "neat/neuronmutator.h"
+#include "neat/activation.h"
 #include <stdexcept>
 #include <cstdlib> // For rand(), RAND_MAX
 #include <optional>

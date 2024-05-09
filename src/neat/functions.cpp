@@ -1,4 +1,4 @@
-#include "../include/functions.h"
+#include "neat/functions.h"
 #include <limits>
 #include <algorithm>
 

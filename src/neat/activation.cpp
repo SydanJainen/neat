@@ -1,5 +1,5 @@
 #include <cmath>
-#include "../include/activation.h"
+#include "neat/activation.h"
 
 Activation::Activation(std::function<double(double)> activation_func,
                        std::optional<std::function<double(double)>> derivative_func)

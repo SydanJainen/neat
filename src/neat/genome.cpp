@@ -1,7 +1,8 @@
-#include "../include/genome.h"
+#include "neat/genome.h"
 
-Genome::Genome(int id, int num_inputs, int num_outputs, int num_hidden) : genome_id(id) {
-    //let make each id unique
+Genome::Genome(int id, int num_inputs, int num_outputs, int num_hidden) 
+    : genome_id(id) 
+{
     for (int i = 0; i < num_inputs; ++i) {
         input_ids.push_back(i);
     }
@@ -60,5 +61,15 @@ std::optional<LinkGene> Genome::get_link(int input_id, int output_id) const {
         }
     }
     return std::nullopt; // No link found
+}
+
+int Genome::next_genome_id = 0;
+
+int Genome::get_next_genome_id() {
+    return next_genome_id++;
+}
+
+void Genome::add_link(const LinkGene& link) {
+    links.push_back(link);
 }
 

@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
-project(neat)
+project(neat-cli)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_executable(neat
-    main.cpp
-)
+add_subdirectory(neat)
 
-target_include_directories(neat PRIVATE "${CMAKE_SOURCE_DIR}/include")
+set(SOURCE_DIR main.cpp)
 
-install(TARGETS neat DESTINATION output)
+add_executable(neat-cli main.cpp)
+
+target_link_libraries(neat-cli neat)
+
+install(TARGETS neat-cli DESTINATION bin)

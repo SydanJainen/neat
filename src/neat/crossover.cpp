@@ -1,4 +1,4 @@
-#include "../include/crossover.h";
+#include "neat/crossover.h";
 #include <cstdlib> // For rand()
 
 NeuronGene crossover_neuron(const NeuronGene& first, const NeuronGene& second) {
@@ -17,9 +17,9 @@ LinkGene crossover_link(const LinkGene& first, const LinkGene& second) {
 
 Genome crossover(const Individual& dominant, const Individual& recessive) {
     extern int m_genome_indexer; // Assuming this variable is declared globally elsewhere
-    Genome offspring(m_genome_indexer++, dominant.genome.num_inputs, dominant.genome.num_outputs);
+    Genome offspring(m_genome_indexer++, dominant.genome.make_inputs_ids().size(), dominant.genome.make_outputs_ids().size());
     for (const NeuronGene& neuron : dominant.genome.neurons) {
-        std::optional<NeuronGene> recessive_neuron = recessive.genome.get_neuron(neuron.neuron_id);
+        std::optional<NeuronGene> recessive_neuron = recessive.genome.find_neuron(neuron.neuron_id);
         if (!recessive_neuron.has_value()) {
             offspring.add_neuron(neuron);
         } else {

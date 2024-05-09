@@ -1,5 +1,4 @@
-#ifndef FEED_FORWARD_NEURAL_NETWORK_H
-#define FEED_FORWARD_NEURAL_NETWORK_H
+#pragma once
 
 #include <vector>
 #include <unordered_map>
@@ -18,4 +17,3 @@ private:
     std::vector<Neuron> neurons;
 };
 
-#endif // FEED_FORWARD_NEURAL_NETWORK_H

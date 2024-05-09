@@ -1,0 +1,12 @@
+prefix=D:/Script/neat
+exec_prefix=D:/Script/neat/bin
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: neat
+Description: Genetic Algorithm NN library
+Version: 1.0.0
+
+Requires:
+Libs: -L${libdir} -lneat
+Cflags: -I${includedir}

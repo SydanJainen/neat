@@ -1,7 +1,7 @@
-#include <genome.h>
-#include <linkmutator.h>
-#include <functions.h>
-#include <neuronmutator.h>
+#include <neat/genome.h>
+#include <neat/linkmutator.h>
+#include <neat/functions.h>
+#include <neat/neuronmutator.h>
 #include <optional> // Required for std::optional
 
 void mutate_add_link(Genome &genome) {

@@ -1,4 +1,4 @@
-#include "../include/linkmutator.h"
+#include "neat/linkmutator.h"
 #include <random>
 
 LinkGene LinkMutator::new_value(int input_id, int output_id) {
